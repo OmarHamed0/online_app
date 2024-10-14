@@ -4,52 +4,52 @@ import 'package:dio/dio.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:online_exam_app/core/networking/exceptions.dart';
 
-abstract class BaseViewModel<event,state> extends Bloc<event ,state>{
+abstract class BaseViewModel<state> extends Cubit<state>{
   BaseViewModel(super.initialState);
-  AppLocalizations? locale;
+  AppLocalizations? local;
    String getErrorMassageFromException(Exception ? exception){
      if(exception is DioHttpException){
        return _mapDioExceptionToMessage(exception.dioException);
      }else {
-       return locale!.unknown;
+       return local!.unknown;
      }
    }
   String _mapDioExceptionToMessage(DioException dioException) {
     switch (dioException.type) {
         case DioExceptionType.connectionTimeout:
-          return locale!.connectionTimeout;
+          return local!.connectionTimeout;
         case DioExceptionType.sendTimeout:
-          return locale!.sendTimeout;
+          return local!.sendTimeout;
         case DioExceptionType.receiveTimeout:
-          return locale!.receiveTimeout ;
+          return local!.receiveTimeout ;
         case DioExceptionType.badCertificate:
-          return locale!.badCertificate ;
+          return local!.badCertificate ;
         case DioExceptionType.badResponse:
           return _handleBadResponse(dioException);
         case DioExceptionType.connectionError:
-          return locale!.connectionError ;
+          return local!.connectionError ;
         case DioExceptionType.unknown:
-          return locale!.unknown ;
+          return local!.unknown ;
         case DioExceptionType.cancel:
           return "Request cancelled";
         default:
-          return locale!.unknown;
+          return local!.unknown;
       }
   }
   String _handleBadResponse(DioException exception) {
     final statusCode = exception.response?.statusCode;
     if (statusCode == 400) {
-      return exception.response?.data["message"] ?? locale!.badRequest ;
+      return exception.response?.data["message"] ?? local!.badRequest ;
     } else if (statusCode == 401 || statusCode == 403) {
-      return exception.response?.data["message"] ?? locale!.unauthorized ;
+      return exception.response?.data["message"] ?? local!.unauthorized ;
     } else if (statusCode == 404) {
-      return  locale!.notFount;
+      return  local!.notFount;
     } else if (statusCode == 409) {
-      return exception.response?.data["message"] ?? locale!.conflict ;
+      return exception.response?.data["message"] ?? local!.conflict ;
     } else if (statusCode == 500) {
-      return  locale!.internalServerError ;
+      return  local!.internalServerError ;
     } else {
-      return exception.response?.data["message"] ?? locale!.unknown ;
+      return exception.response?.data["message"] ?? local!.unknown ;
     }
   }
 
