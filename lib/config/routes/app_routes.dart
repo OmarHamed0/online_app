@@ -3,6 +3,7 @@ import 'package:online_exam_app/config/routes/page_route_name.dart';
 import 'package:online_exam_app/presentation/auth/forget_password/view/forget_password_screen.dart';
 import 'package:online_exam_app/presentation/auth/login/view/login_screen.dart';
 import 'package:online_exam_app/presentation/auth/signup/screen/signup_screen.dart';
+import 'package:online_exam_app/presentation/main_home/main_home_screen/main_home_screen.dart';
 
 
 class AppRoutes{
@@ -10,6 +11,8 @@ class AppRoutes{
     switch(settings.name){
       case PageRouteName.login:
         return _handleMaterialPageRoute(widget:const  LoginView());
+      case PageRouteName.mainHome:
+        return _handleMaterialPageRoute(widget:MainHomeScreen());
       case PageRouteName.register:
         return _handleMaterialPageRoute(widget:  SignupScreen());
       case PageRouteName.forgetPassword:
