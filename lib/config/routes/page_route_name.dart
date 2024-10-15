@@ -5,4 +5,5 @@ class PageRouteName{
   static const String mainHome="forgetPassword";
   static const String specificSubjectScreen="specificSubjectScreen";
   static const String exploreScreen="exploreScreen";
+  static const String startExamScreen="startExamScreen";
 }
