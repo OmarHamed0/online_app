@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_exam_app/core/styles/colors/app_colors.dart';
 import 'package:online_exam_app/core/styles/fonts/app_fonts.dart';
 
+import '../../../../config/routes/page_route_name.dart';
 import '../../../../core/styles/images/app_images.dart';
 
 class StartExamScreen extends StatelessWidget {
@@ -12,7 +13,11 @@ class StartExamScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios_rounded),
+        leading: InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, PageRouteName.specificSubjectScreen);
+          },
+            child: Icon(Icons.arrow_back_ios_rounded)),
       ),
       body: Column(
         children: [
