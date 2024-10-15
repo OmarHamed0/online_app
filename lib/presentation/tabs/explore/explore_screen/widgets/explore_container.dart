@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_exam_app/domain/entities/GetAllSubjects.dart';
+import '../../../../../config/routes/page_route_name.dart';
 import '../../../../../core/styles/colors/app_colors.dart';
 import '../../../../../core/styles/fonts/app_fonts.dart';
 
@@ -11,7 +12,13 @@ Subjects subjects;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: (){},
+      onTap: (){
+        Navigator.pushNamed(
+          context,
+          PageRouteName.specificSubjectScreen,
+          arguments: subjects,
+        );
+      },
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: Container(

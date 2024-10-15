@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_exam_app/core/styles/fonts/app_fonts.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explre_screen/widgets/custom_search.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explre_screen/widgets/explore_container.dart';
+import 'package:online_exam_app/presentation/tabs/explore/explore_screen/widgets/custom_search.dart';
+import 'package:online_exam_app/presentation/tabs/explore/explore_screen/widgets/explore_container.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_view_model/explore_states.dart';
 import '../../../../core/styles/colors/app_colors.dart';
 import '../../../../di/di.dart';
 import '../explore_view_model/explore_cubit.dart';
 
 class ExploreScreen extends StatelessWidget {
-  static const String routeName = "ExploreScreen";
+  static  String routeName = "ExploreScreen";
   var viewModel = getIt.get<ExploreCubit>();
 
   @override

@@ -1,8 +1,11 @@
 import 'package:online_exam_app/data/api/model/response/auth_response.dart';
 
 import 'model/GetAllSubjectsDto.dart';
+import 'model/LoggedUserDto.dart';
 
 abstract class ApiConsumer{
+  Future<LoggedUserDto?>loggedUser();
+
   Future<GetAllSubjectsDto?>getAllSubjects();
   Future<AuthResponse?> signup({
     required String firstName ,
