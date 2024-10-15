@@ -1,6 +1,9 @@
 import 'package:online_exam_app/data/api/model/response/auth_response.dart';
 
+import 'model/GetAllSubjectsDto.dart';
+
 abstract class ApiConsumer{
+  Future<GetAllSubjectsDto?>getAllSubjects();
   Future<AuthResponse?> signup({
     required String firstName ,
     required String lastName ,

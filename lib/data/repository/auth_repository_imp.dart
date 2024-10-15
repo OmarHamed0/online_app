@@ -1,9 +1,10 @@
-import 'package:injectable/injectable.dart';
 import 'package:online_exam_app/core/networking/result.dart';
 import 'package:online_exam_app/data/datasource/contracts/auth_online_data_source.dart';
 import 'package:online_exam_app/domain/entities/User.dart';
 
 import '../../domain/repository/auth_repository.dart';
+import 'package:injectable/injectable.dart';
+
 @Injectable(as:AuthRepository )
 class AuthRepositoryImp implements AuthRepository{
   final AuthOnlineDataSource authOnlineDataSource;

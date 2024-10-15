@@ -1,44 +1,47 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:online_exam_app/domain/entities/GetAllSubjects.dart';
 import '../../../../../core/styles/colors/app_colors.dart';
 import '../../../../../core/styles/fonts/app_fonts.dart';
-import '../../../../../core/styles/images/app_images.dart';
 
 class ExploreContainer extends StatelessWidget {
-  const ExploreContainer({super.key});
-
+Subjects subjects;
+  ExploreContainer({required this.subjects});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.kBlack.withOpacity(0.1),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(0, 3),
-              )
-            ],
-      ),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              Image.asset(AppImages.languageTranslator),
-              SizedBox(
-                width: 10.w,
-              ),
-              Text(
-                "Language",
-                style: AppFonts.font16GrayWeight400
-                    .copyWith(color: AppColors.kBlack),
-              ),
-            ],
+    return InkWell(
+      onTap: (){},
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(12.r),
+              boxShadow: [
+                BoxShadow(
+                  color: AppColors.kBlack.withOpacity(0.1),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3),
+                )
+              ],
+        ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+               Image.network(subjects.icon??""),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(subjects.name??"",
+
+                  style: AppFonts.font16GrayWeight400
+                      .copyWith(color: AppColors.kBlack),
+                ),
+              ],
+            ),
           ),
         ),
       ),
