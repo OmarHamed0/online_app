@@ -3,7 +3,7 @@ import 'package:online_exam_app/config/routes/page_route_name.dart';
 import 'package:online_exam_app/presentation/auth/forget_password/view/forget_password_screen.dart';
 import 'package:online_exam_app/presentation/auth/login/view/login_screen.dart';
 import 'package:online_exam_app/presentation/auth/signup/screen/signup_screen.dart';
-import 'package:online_exam_app/presentation/main_home/main_home_screen/main_home_screen.dart';
+import 'package:online_exam_app/presentation/main_home/main_home_screen.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/explore_screen.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/questions_screen.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/start_exam_screen.dart';

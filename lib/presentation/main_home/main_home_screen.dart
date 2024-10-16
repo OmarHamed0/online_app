@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../core/utils/Functions/custom_bottom_navigation_bar.dart';
-import '../../../di/di.dart';
+import '../../core/utils/Functions/custom_bottom_navigation_bar.dart';
+import '../../di/di.dart';
 import 'main_home_view_model/main_home_cubit.dart';
 import 'main_home_view_model/main_home_states.dart';
-
 class MainHomeScreen extends StatelessWidget {
   static String routeName = "MainHomeScreen";
   var viewModel = getIt.get<MainHomeCubit>();
