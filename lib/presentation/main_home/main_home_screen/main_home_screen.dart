@@ -1,39 +1,28 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/utils/Functions/custom_bottom_navigation_bar.dart';
-import '../../tabs/explore/explore_screen/explore_screen.dart';
-import '../../tabs/profile/profile_screen/profile_screen.dart';
-import '../../tabs/result/result_screen/result_screen.dart';
+import '../../../di/di.dart';
+import 'main_home_view_model/main_home_cubit.dart';
+import 'main_home_view_model/main_home_states.dart';
 
-
-class MainHomeScreen extends StatefulWidget {
-  static  String routeName = "MainHomeScreen";
-
-  @override
-  State<MainHomeScreen> createState() => _MainHomeScreenState();
-}
-
-class _MainHomeScreenState extends State<MainHomeScreen> {
-  int selectedIndex = 0;
-
-  List<Widget> tabes = [
-    ExploreScreen(),
-    ResultScreen(),
-    ProfileScreen(),
-  ];
+class MainHomeScreen extends StatelessWidget {
+  static String routeName = "MainHomeScreen";
+  var viewModel = getIt.get<MainHomeCubit>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: CustomBottomNavigationBar(
-          selectedIndex: selectedIndex,
-          context: context,
-          onTabFunction: (index) {
-            setState(() {
-              selectedIndex = index;
-            });
-          }),
-      body: tabes[selectedIndex],
-    );
+    return BlocConsumer<MainHomeCubit, MainHomeStates>(
+        bloc: viewModel,
+        listener: (context, state) {},
+        builder: (context, state) {
+          return Scaffold(
+              bottomNavigationBar: CustomBottomNavigationBar(
+                  selectedIndex: viewModel.selectedIndex,
+                  context: context,
+                  onTabFunction: (index) {
+                    viewModel.changeBottomNavigationBar(index);
+                  }),
+              body: viewModel.tabs[viewModel.selectedIndex]);
+        });
   }
 }

@@ -14,7 +14,7 @@ class ExploreCubit extends Cubit<ExploreStates>{
   List<Subjects> subjectList = [];
 
   void getAllSubjects() async {
-    emit(ExploreLoadingState(loadingMessage: "loadin..." ''));
+    emit(ExploreLoadingState(loadingMessage: "loading..." ''));
     var result = await useCase.invoke();
     if (result is Success<GetAllSubjectsDto?>) {
       subjectList = result.data?.subjects??[];
