@@ -7,6 +7,7 @@ import 'package:online_exam_app/presentation/main_home/main_home_screen/main_hom
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/explore_screen.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/questions_screen.dart';
 import 'package:online_exam_app/presentation/tabs/explore/explore_screen/start_exam_screen.dart';
+import 'package:online_exam_app/presentation/tabs/result/result_screen/result_answer.dart';
 import '../../presentation/tabs/explore/explore_screen/specific_subject_screen.dart';
 
 class AppRoutes {
@@ -14,8 +15,10 @@ class AppRoutes {
     switch (settings.name) {
       case PageRouteName.specificSubjectScreen:
         return _handleMaterialPageRoute(widget: SpecificSubjectScreen());
-      case PageRouteName.questionsScreenScreen:
+      case PageRouteName.questionsScreen:
         return _handleMaterialPageRoute(widget: QuestionsScreen());
+      case PageRouteName.resultAnswerScreen:
+        return _handleMaterialPageRoute(widget: ResultAnswerScreen());
 
       case PageRouteName.startExamScreen:
         return _handleMaterialPageRoute(widget: StartExamScreen());
