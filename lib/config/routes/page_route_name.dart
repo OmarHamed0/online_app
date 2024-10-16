@@ -6,4 +6,5 @@ class PageRouteName{
   static const String specificSubjectScreen="specificSubjectScreen";
   static const String exploreScreen="exploreScreen";
   static const String startExamScreen="startExamScreen";
+  static const String questionsScreenScreen="questionsScreenScreen";
 }

@@ -166,7 +166,9 @@ class StartExamScreen extends StatelessWidget {
             height: 25.h,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(context, PageRouteName.questionsScreenScreen);
+            },
             child: Text(
               "Start",
               style: AppFonts.font16BlueWeight500
