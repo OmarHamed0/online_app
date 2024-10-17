@@ -14,6 +14,12 @@ class QuestionContainer extends StatefulWidget {
 
 class _QuestionContainerState extends State<QuestionContainer> {
   int selectedOption = -1;
+  List<String> questions = [
+    "Select the correctly punctuated \n sentence 1.",
+    "Select the correctly punctuated \n sentence 2.",
+    "Select the correctly punctuated \n sentence 3.",
+    "Select the correctly punctuated \n sentence 4.",
+  ];
   List<String> options = [
     "It's going to rain today.",
     "Its going to rain today.",
@@ -22,31 +28,32 @@ class _QuestionContainerState extends State<QuestionContainer> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(height:400.h,
+    return Container(
+      height: 400.h,
       child: Column(
-          children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text("Select the correctly punctuated \n sentence.",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.kBlack,
-                          fontSize: 18.sp,
-                          overflow: TextOverflow.ellipsis)),
-                ),
-              ],
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: options.length,
-                itemBuilder: (context, index) {
-                  return option(index, options[index]);
-                },
+        children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text("Select the correctly punctuated \n sentence.",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.kBlack,
+                        fontSize: 18.sp,
+                        overflow: TextOverflow.ellipsis)),
               ),
+            ],
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: options.length,
+              itemBuilder: (context, index) {
+                return option(index, options[index]);
+              },
             ),
-          ],
+          ),
+        ],
       ),
     );
   }
