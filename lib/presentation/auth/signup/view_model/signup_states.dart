@@ -7,7 +7,7 @@ sealed class SignupState {}
 final class SignupInitial extends SignupState {}
 class UpdateButtonBackGroundColor extends SignupState{}
 class SignupLoadingStata extends SignupState {
-  String ?loadingMessage;
+  final String ?loadingMessage;
   SignupLoadingStata({
     required this.loadingMessage
 });

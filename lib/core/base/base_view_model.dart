@@ -52,12 +52,4 @@ abstract class BaseViewModel<state> extends Cubit<state>{
       return exception.response?.data["message"] ?? local!.unknown ;
     }
   }
-
-
-
-
-
-
-
-
 }

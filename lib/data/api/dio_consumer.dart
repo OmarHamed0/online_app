@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:online_exam_app/data/api/api_constants.dart';
 import 'package:online_exam_app/data/api/api_consumer.dart';
+import 'package:online_exam_app/data/api/model/GetAllSubjectsDto.dart';
 import 'package:online_exam_app/data/api/model/response/auth_response.dart';
 import 'package:injectable/injectable.dart';
+import 'model/LoggedUserDto.dart';
 
 @Injectable(as:ApiConsumer )
 class DioConsumer implements ApiConsumer {
@@ -67,5 +69,19 @@ class DioConsumer implements ApiConsumer {
         data: {"email": email, "newPassword": newPassword});
     AuthResponse authResponse = AuthResponse.fromJson(response.data);
     return authResponse;
+  }
+
+  @override
+  Future<GetAllSubjectsDto?> getAllSubjects()async {
+    var response=await _dio.get(ApiConstants.getAllSubjectsApi);
+    GetAllSubjectsDto getAllSubjects=GetAllSubjectsDto.fromJson(response.data);
+    return getAllSubjects;
+  }
+  @override
+  Future<LoggedUserDto?> loggedUser() async {
+    var response = await _dio.get(ApiConstants.loggedUserApi,
+        options: Options(headers: {}));
+    LoggedUserDto loggedUserDto=LoggedUserDto.fromJson(response.data);
+    return loggedUserDto;
   }
 }
