@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_exam_app/core/styles/colors/app_colors.dart';
 import 'package:online_exam_app/core/styles/fonts/app_fonts.dart';
 
-import '../../../../config/routes/page_route_name.dart';
-import '../../../../core/styles/images/app_images.dart';
+import '../../../../../config/routes/page_route_name.dart';
+import '../../../../../core/styles/images/app_images.dart';
 
 class StartExamScreen extends StatelessWidget {
   static String routeName = "startExamScreen";

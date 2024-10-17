@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:online_exam_app/core/styles/fonts/app_fonts.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/widgets/specific_subject_container.dart';
 
-import '../../../../config/routes/page_route_name.dart';
+import '../../../../../config/routes/page_route_name.dart';
+import '../widgets/specific_subject_container.dart';
 
 class SpecificSubjectScreen extends StatelessWidget {
   static String routeName = "specificSubjectScreen";

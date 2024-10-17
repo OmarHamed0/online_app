@@ -5,21 +5,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../core/styles/colors/app_colors.dart';
 import '../../../../../core/styles/fonts/app_fonts.dart';
 
-class QuestionContainer extends StatefulWidget {
-  const QuestionContainer({super.key});
-
+class QuestionAnswerContainer extends StatefulWidget {
   @override
-  State<QuestionContainer> createState() => _QuestionContainerState();
+  State<QuestionAnswerContainer> createState() => _QuestionContainerState();
 }
 
-class _QuestionContainerState extends State<QuestionContainer> {
+class _QuestionContainerState extends State<QuestionAnswerContainer> {
   int selectedOption = -1;
-  List<String> questions = [
-    "Select the correctly punctuated \n sentence 1.",
-    "Select the correctly punctuated \n sentence 2.",
-    "Select the correctly punctuated \n sentence 3.",
-    "Select the correctly punctuated \n sentence 4.",
-  ];
   List<String> options = [
     "It's going to rain today.",
     "Its going to rain today.",
@@ -71,7 +63,7 @@ class _QuestionContainerState extends State<QuestionContainer> {
           padding: EdgeInsets.all(7),
           decoration: BoxDecoration(
             color: selectedOption == value
-                ? AppColors.kMedBlue
+                ? AppColors.kLightGreen
                 : AppColors.kLightBlue,
             borderRadius: BorderRadius.circular(15.r),
           ),
@@ -80,7 +72,7 @@ class _QuestionContainerState extends State<QuestionContainer> {
               Radio<int>(
                 value: value,
                 groupValue: selectedOption,
-                activeColor: AppColors.kBlue,
+                activeColor: AppColors.kGreen,
                 onChanged: (int? newValue) {
                   setState(() {
                     selectedOption = newValue!;

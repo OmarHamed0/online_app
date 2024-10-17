@@ -4,11 +4,11 @@ import 'package:online_exam_app/presentation/auth/forget_password/view/forget_pa
 import 'package:online_exam_app/presentation/auth/login/view/login_screen.dart';
 import 'package:online_exam_app/presentation/auth/signup/screen/signup_screen.dart';
 import 'package:online_exam_app/presentation/main_home/main_home_screen.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/explore_screen.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/questions_screen.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/start_exam_screen.dart';
 import 'package:online_exam_app/presentation/tabs/result/result_screen/result_answer.dart';
-import '../../presentation/tabs/explore/explore_screen/specific_subject_screen.dart';
+import '../../presentation/tabs/explore/explore/explore_screen/explore_screen.dart';
+import '../../presentation/tabs/explore/question_screen/questions_screen.dart';
+import '../../presentation/tabs/explore/specific_subject_screen/specific_subject_screen.dart';
+import '../../presentation/tabs/explore/start_exam_screen/start_exam_screen.dart';
 
 class AppRoutes {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {

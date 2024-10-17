@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:online_exam_app/core/styles/fonts/app_fonts.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/widgets/custom_search.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_screen/widgets/explore_container.dart';
-import 'package:online_exam_app/presentation/tabs/explore/explore_view_model/explore_states.dart';
-import '../../../../core/styles/colors/app_colors.dart';
-import '../../../../di/di.dart';
+import '../../../../../core/styles/colors/app_colors.dart';
+import '../../../../../di/di.dart';
+import '../../widgets/custom_search.dart';
+import '../../widgets/explore_container.dart';
 import '../explore_view_model/explore_cubit.dart';
+import '../explore_view_model/explore_states.dart';
 
 class ExploreScreen extends StatelessWidget {
   static  String routeName = "ExploreScreen";
